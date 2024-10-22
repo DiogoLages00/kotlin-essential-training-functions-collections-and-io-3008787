@@ -45,7 +45,7 @@ fun main() {
     val concatNumber = "The number " + 10
     println(concatNumber)
 
-    // String is always a val so when concatenate 2 strings we create a 3rd string
+    // String is always a val (in this exercise) so when concatenate 2 strings we create a 3rd string
     // Kotlin uses string templates
     val aNumber = 10
     val concatTemplate = "The number $aNumber"
