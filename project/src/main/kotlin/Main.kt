@@ -26,4 +26,8 @@ fun main() {
 
     printFormattedName("Diogo", "Lages", ".", emailFormatter)
     printFormattedName("Harrison", "Ford", ".", emailFormatter)
+
+    printFormattedName("Oliveira", "Pedro", "-") { first, last, format ->
+        "$last $format $first"
+    }
 }
