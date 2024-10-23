@@ -15,8 +15,15 @@ val formatter: (firstName: String, lastName: String, format: String) -> String =
     "$firstName$format$lastName"
 }
 
+val emailFormatter: (firstName: String, lastName: String, format: String) -> String = { firstName, lastName, format ->
+    "$firstName$format$lastName@criticaltechworks.com"
+}
+
 
 fun main() {
     printFormattedName("Diogo", "Lages", ".", formatter)
     printFormattedName("Diogo", "Lages", "@", formatter)
+
+    printFormattedName("Diogo", "Lages", ".", emailFormatter)
+    printFormattedName("Harrison", "Ford", ".", emailFormatter)
 }
