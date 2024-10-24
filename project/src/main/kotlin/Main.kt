@@ -1,3 +1,6 @@
+// Challenge: Replace an if/else expression with a when expression
+
+
 // Refactor getOutput() to use a when expression
 fun getOutput(input: Any?): String = if (input is Number) {
     if (input !is Int) {
