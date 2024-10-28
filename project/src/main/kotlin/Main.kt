@@ -12,7 +12,12 @@ import java.io.File
 fun main() {
 
     print("Enter the name of the file: ")
-    val filename = readLine() ?: ""
+    val filename = readLine()
+
+    if (filename.isNullOrEmpty()) {
+        println("Invalid filename")
+        return
+    }
 
     val file = File(filename)
     if (!file.isFile) {
