@@ -1,4 +1,5 @@
 import java.io.File
+import kotlin.io.path.writeLines
 
 // Challenge: Parsing a list of data from a file
 
@@ -26,9 +27,19 @@ fun main() {
     }
 
     val sortedFile = file.readLines()
-        .map { it -> it.split(":")[1] }
-        .sortedDescending()
+        .map { it ->
+            val elements = it.split(":")
+            elements[0] to elements[1]
+        }
+        .sortedByDescending { it.second }
         .take(3)
-        .forEach { println(it) }
+        //.forEach { println(it) }
+
+    val outputFile = File("sorted.txt").toPath()
+
+    val bestScores = sortedFile.map {
+        "${it.first}:${it.second}"
+    }
+    outputFile.writeLines(bestScores)
 
 }
